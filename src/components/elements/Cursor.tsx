@@ -7,7 +7,7 @@ function Cursor({ }: Props) {
     const [position, setPosition] = useState({ x: 0, y: 0 })
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: any) => {
             setPosition({ x: e.clientX, y: e.clientY });
         }
 
