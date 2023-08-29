@@ -14,18 +14,46 @@ import Archive from '@/components/sections/Archive'
 
 // Octokit
 import { octokit } from "../lib/github";
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/global/footer/Footer'
+import { HoverContext } from '@/contexts/HoverContext'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 function Home() {
+  const {isLinkHover, setIsLinkHover} = useContext(HoverContext);
 
   // useEffect(() => {
   //   console.log(repos)
   // },[])
+  useEffect(() => {
+    
+    const handleHover = (event: any) => {
+      // Logique de gestion du survol du lien
+      // console.log('Curseur survolant le lien :', event.target);
+      setIsLinkHover(true);
+    };
+
+    const handleOut = (event: any) => {
+      setIsLinkHover(false);
+    }
+
+    const links = document.getElementsByTagName('a');
+    Array.from(links).forEach((link) => {
+      link.addEventListener('mouseenter', handleHover);
+      link.addEventListener('mouseleave', handleOut);
+    });
+
+    // Nettoyer les écouteurs d'événement lors du démontage du composant
+    return () => {
+      Array.from(links).forEach((link) => {
+        link.removeEventListener('mouseenter', handleHover);
+        link.addEventListener('mouseleave', handleOut);
+      });
+    };
+  }, []);
   
   return (
     <main className='w-full h-screen bg-bodyColor text-textLight overflow-x-hidden overflow-y-scroll scrollbar-track-textDark/20 scrollbar-thumb-textDark/60 scrollbar-thin'>

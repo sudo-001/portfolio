@@ -98,11 +98,11 @@ function Navbar({ }: Props) {
                     </a>
 
                     {/* Dashboard button */}
-                    <Link href="/dashboard">
+                    {/* <Link href="/dashboard">
                         <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className='w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300'>
                             Dashboard
                         </motion.button>
-                    </Link>
+                    </Link> */}
                 </div>
 
                 {/* hamburger icon */}
@@ -174,11 +174,11 @@ function Navbar({ }: Props) {
                                     </a>
 
                                     {/* Dashboard button */}
-                                    <Link href="/dashboard" >
+                                    {/* <Link href="/dashboard" >
                                         <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className='w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300'>
                                             Dashboard
                                         </motion.button>
-                                    </Link>
+                                    </Link> */}
 
                                     {/* Social media icons */}
                                     <div className='inline-flex xl:hidden items-center justify-center w-full py-6 gap-4 text-textDark'>

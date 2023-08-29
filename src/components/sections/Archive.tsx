@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ArchiveCard from '../elements/ArchiveCard'
 import { motion } from "framer-motion";
+import archives from "../../data/archives.json";
 
 type Props = {}
 
@@ -16,8 +17,8 @@ function Archive({ }: Props) {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-10 lgl:px-10'>
-                <ArchiveCard title="Wheather App" description="A frontend application that consumes a weather API and provides information on the weather in a given city." listItem={["HTML", "CSS", "JavaScript"]} link="https://weather-app-inky-six.vercel.app/" />
-                <ArchiveCard title="CodersList" description="A frontend application for learning how to use NEXTJS, with an API that provides information about users." listItem={["Nextjs", "TailwindCss", "Vercel"]} link="https://coderslist.vercel.app/" />
+                <ArchiveCard title={`${archives[0].title}`} description={`${archives[0].description}`} listItem={archives[0].technos} link={`${archives[0].link}`} />
+                <ArchiveCard title={`${archives[1].title}`} description={`${archives[1].description}`} listItem={archives[1].technos} link={`${archives[1].link}`} />
                 {/* <ArchiveCard title="title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, vel incidunt ea inventore enim deserunt, tenetur nesciunt veritatis repellendus aspernatur pariatur excepturi doloremque quod? Voluptates praesentium rerum accusantium mollitia nobis." listItem={["ReactJs", "TailwindCss", "Framer-motion"]} link="https://tesla-website-clone-nu.vercel.app/" /> */}
 
                 {/* {

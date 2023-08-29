@@ -17,6 +17,7 @@ import tailwind from "../../../public/assets/images/logo/tailwindcss.png";
 import vercel from "../../../public/assets/images/logo/vercel.svg";
 import github from "../../../public/assets/images/logo/github.png";
 import gitlab from "../../../public/assets/images/logo/gitlab.png";
+import flutter from "../../../public/assets/images/logo/flutter.png";
 
 type Props = {}
 
@@ -119,6 +120,23 @@ function Skills({ }: Props) {
                             </div>
                             <motion.p initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 1.2 }} className='pt-1 text-lg text-blue-400 tracking-widest font-medium'>
                                 TailwindCss
+                            </motion.p>
+                        </motion.div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <h2 className='text-stroke-white text-2xl mb-4 text-transparent font-extrabold tracking-widest'>MOBILE</h2>
+
+                    <div className='flex gap-8 flex-wrap'>
+
+                        <motion.div initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} className='flex flex-col items-center'>
+                            <div className='p-4 rounded-full bg-blue-400/10 hover:bg-blue-400/20 transition-all duration-300 hover:scale-95 hover:border-blue-100/5 flex flex-col border border-blue-400'>
+                                <Image src={flutter} alt="JavaScript" className='w-11 h-11' />
+                            </div>
+                            <motion.p initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.5 }} className='pt-1 text-lg text-blue-400 tracking-widest font-medium'>
+                                Flutter
                             </motion.p>
                         </motion.div>
 
