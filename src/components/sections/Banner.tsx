@@ -40,13 +40,13 @@ function Banner({ }: Props) {
                 initial={{ y: 10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}
                 className='text-base md:max-w-[650px] text-textDark font-medium tracking-widest'>
 
-                Also know as <span className='text-textGreen'>sudo</span>, i am a developer with 2+ years of experience in React and nodejs. I have a strong fondation in front-end & back-end development and am skilled in creating user-friendly and responsive web applications using React, Nextjs, Nodejs and Nestjs. {" "}
-                <a href="">
+                Also know as <span className='text-textGreen'>sudo</span>, i am a developer with 2+ years of experience in <span className="text-textGreen">React</span> and <span className="text-textGreen">nodejs</span>. I have a strong fondation in front-end & back-end development and am skilled in creating user-friendly and responsive web applications using React, Nextjs, Nodejs and Nestjs. {" "}
+                <Link href="#about" onClick={handleScroll}>
                     <span className='text-textGreen inline-flex relative cursor-pointer h-7 overflow-x-hidden group'>
                         Learn More
                         <span className="absolute w-full h-[1px] bg-textGreen left-0 bottom-1 -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500"></span>
                     </span>
-                </a>
+                </Link>
 
             </motion.p>
 

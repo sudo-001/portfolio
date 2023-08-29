@@ -37,6 +37,7 @@ module.exports = {
         textLight: "#cc66f6",
         textDark: "#8992b0",
         hoverColor: "rgba(100,255,218,0.1)",
+        dashboardColor: "#",
       },
     },
   },

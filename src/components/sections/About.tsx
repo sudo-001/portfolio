@@ -19,8 +19,8 @@ function About({ }: Props) {
                     <div>
                         <h2 className='uppercase font-semibold'>Languages</h2>
                         <ul  className='list-none flex flex-col gap-4 pl-2'>
-                            <li className='font-medium mt-4'>French <span className='font-light'>Native</span></li>
-                            <li className='font-medium'>English <span className='font-light'>Fluent</span></li>
+                            <li className='font-medium mt-4'>French <span className='font-extralight'>Native</span></li>
+                            <li className='font-medium'>English <span className='font-extralight'>Fluent</span></li>
                         </ul>
                     </div>
                 </div>

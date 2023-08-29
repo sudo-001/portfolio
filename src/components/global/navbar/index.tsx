@@ -96,6 +96,13 @@ function Navbar({ }: Props) {
                             Resume
                         </motion.button>
                     </a>
+
+                    {/* Dashboard button */}
+                    <Link href="/dashboard">
+                        <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className='w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300'>
+                            Dashboard
+                        </motion.button>
+                    </Link>
                 </div>
 
                 {/* hamburger icon */}
@@ -106,6 +113,7 @@ function Navbar({ }: Props) {
                     <span className='w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300'></span>
                 </div>
 
+                {/* Responsive menu (Mobile & small devices) */}
                 {
                     showMenu && (
                         <div ref={(val) => { ref.current = val }} onClick={handleClick}
@@ -165,8 +173,15 @@ function Navbar({ }: Props) {
                                         </motion.button>
                                     </a>
 
+                                    {/* Dashboard button */}
+                                    <Link href="/dashboard" >
+                                        <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }} className='w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300'>
+                                            Dashboard
+                                        </motion.button>
+                                    </Link>
+
                                     {/* Social media icons */}
-                                    <div className='inline-flex xl:hidden items-center justify-center w-full py-6 gap-4'>
+                                    <div className='inline-flex xl:hidden items-center justify-center w-full py-6 gap-4 text-textDark'>
                                         <div className='flex gap-4 '>
 
                                             <motion.a initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.2, delay: 0.7, ease: 'easeIn' }} href="https://github.com/sudo-001" target="_blank" rel="noopener noreferrer">

@@ -7,10 +7,13 @@ import { BsArrowUpRight } from "react-icons/bs";
 
 import findAJobImg from "../../../public/assets/images/capture_ecran/findajob.png";
 import teslaImg from "../../../public/assets/images/capture_ecran/tesla.png";
+import projects from "../../data/projects.json";
 
 type Props = {}
 
 function Projects({ }: Props) {
+
+
     return (
         <section id="projects" className='max-w-containerWidth mx-auto lgl:px-20 py-24'>
             <SectionTitle title={'Projects'} />
@@ -19,33 +22,37 @@ function Projects({ }: Props) {
                 {/* Project 1 */}
                 <div className='w-full flex flex-col items-center justify-center gap-28 mt-20'>
                     <div className='flex flex-col xl:flex-row gap-6'>
-                        <a href="https://find-a-job-front.vercel.app" target='_blank' className='w-full xl:w-1/2 h-auto relative group'>
+                        <a href={`${projects[1].online_link}`} target='_blank' className='w-full xl:w-1/2 h-auto relative group'>
                             <div>
-                                <Image className='w-full h-full object-contain' src={findAJobImg} alt="Find A Job" />
+                                <Image className='w-full h-full object-contain' src={`${projects[0].image}`} alt={`${projects[0].title}`} width={1000} height={1000}/>
                             </div>
                         </a>
                         <div className='w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end text-right xl:-ml-16 z-10'>
                             <p className='text-textGreen text-sm tracking-wide'>Feature Projet</p>
-                            <h3 className='text-2xl font-bold text-[#fff]'>Find A Job</h3>
+                            <h3 className='text-2xl font-bold text-[#fff]'>{`${projects[0].title}`}</h3>
                             <p className='bg-[#111240] text-sm md:text-base p-2 rounded-md text-textDark'>
-                                Web application enabling job seekers to search for
-                                work and companies or individuals to post job offers.
+                            {`${projects[0].description}`}
                             </p>
 
-                            <ul className='text-xs md:text-sm tracking-wide flex gap-2 md:gap-5 justify-between text-textDark'>
-                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>NextJs</li>
+                            <ul className='text-xs md:text-sm tracking-wide flex gap-2 md:gap-5  text-textDark flex-wrap w-[90%]'>
+                                {/* <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>NextJs</li>
                                 <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Typescript</li>
                                 <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Tailwindcss</li>
-                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Figma</li>
-                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Vercel</li>
+                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Tailwindcss</li>
+                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Figma</li> */}
+                                {
+                                    projects[0].technos.map((techno, index) => (
+                                        <li key={index} className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>{techno}</li>
+                                    ))
+                                }
                             </ul>
 
                             <div className='text-xl flex gap-4'>
-                                <a href="" target="_blank" rel="noopener noreferrer" className='hover:text-textGreen duration-300 text-textDark'>
+                                <a href={`${projects[0].github_link}`} target="_blank" rel="noopener noreferrer" className='hover:text-textGreen duration-300 text-textDark'>
                                     <TbBrandGithubFilled />
                                 </a>
 
-                                <a href="https://find-a-job-front.vercel.app" target="_blank" className='hover:text-textGreen duration-300 text-textDark' rel="noopener noreferrer">
+                                <a href={`${projects[0].online_link}`} target="_blank" className='hover:text-textGreen duration-300 text-textDark' rel="noopener noreferrer">
                                     <FiExternalLink />
                                 </a>
                             </div>
@@ -55,31 +62,33 @@ function Projects({ }: Props) {
                 {/* Project 2 */}
                 <div className='w-full flex flex-col items-center justify-center gap-28 mt-20'>
                     <div className='flex flex-col xl:flex-row-reverse gap-6'>
-                        <a href="https://tesla-website-clone-nu.vercel.app/" target='_blank' className='w-full xl:w-1/2 h-auto relative group'>
+                        <a href={`${projects[1].online_link}`} target='_blank' className='w-full xl:w-1/2 h-auto relative group'>
                             <div>
-                                <Image className='w-full h-full object-contain' src={teslaImg} alt="Tesla clone" />
+                                <Image className='w-full h-full object-contain' src={`${projects[1].image}`} alt={`${projects[1].title}`} width={1000} height={1000} />
                             </div>
                         </a>
                         <div className='w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end text-right z-10'>
                             <p className='text-textGreen text-sm tracking-wide'>Feature Projet</p>
-                            <h3 className='text-2xl font-bold text-[#fff]'>Clone testa UI</h3>
+                            <h3 className='text-2xl font-bold text-[#fff]'>{`${projects[1].title}`}</h3>
                             <p className='bg-[#111240] text-sm md:text-base p-2 xl:-mr-16 rounded-md text-textDark'>
-                               Clone of the UI of the Tesla website
+                            {`${projects[1].description}`}
                             </p>
 
                             <ul className='text-xs md:text-sm tracking-wide flex gap-2 md:gap-5 justify-between text-textDark'>
                                 
-                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>JavaScript</li>
-                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Tailwindcss</li>
-                                <li className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>Vercel</li>
+                                {
+                                    projects[1].technos.map((techno, index) => (
+                                        <li key={index} className='text-textDark/80 hover:text-textDark/100 cursor-pointer'>{techno}</li>
+                                    ))
+                                }
                             </ul>
 
                             <div className='text-xl flex gap-4'>
-                                <a href="https://github.com/sudo-001/tesla_website_clone/" target="_blank" rel="noopener noreferrer" className='hover:text-textGreen duration-300 text-textDark'>
+                                <a href={`${projects[1].github_link}`} target="_blank" rel="noopener noreferrer" className='hover:text-textGreen duration-300 text-textDark'>
                                     <TbBrandGithubFilled />
                                 </a>
 
-                                <a href="https://tesla-website-clone-nu.vercel.app/" target="_blank" className='hover:text-textGreen duration-300 text-textDark' rel="noopener noreferrer">
+                                <a href={`${projects[1].online_link}`} target="_blank" className='hover:text-textGreen duration-300 text-textDark' rel="noopener noreferrer">
                                     <FiExternalLink />
                                 </a>
                             </div>
